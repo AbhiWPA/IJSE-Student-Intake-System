@@ -1,0 +1,68 @@
+CREATE DATABASE IF NOT EXISTS ijse_intake;
+USE ijse_intake;
+
+CREATE TABLE IF NOT EXISTS student(
+    student_Id VARCHAR(45) PRIMARY KEY,
+    student_Name VARCHAR(45),
+    email TEXT,
+    contact VARCHAR(20) UNIQUE,
+    address TEXT,
+    nic VARCHAR(45) UNIQUE
+);
+
+INSERT INTO student VALUES ('S001', 'Kamal', 'kamal@gmail.com', '0785645123', 'galle', '6345786548V');
+INSERT INTO student VALUES ('S002', 'Nimal', 'nimal@gmail.com', '0763344899', 'Matara', '6565643555V');
+INSERT INTO student VALUES ('S003', 'Sunil', 'sunil@gmail.com', '0704545778', 'Colombo', '4553456087V');
+INSERT INTO student VALUES ('S004', 'Amal', 'amal@gmail.com', '0754663123', 'Kandy', '4578932565V');
+INSERT INTO student VALUES ('S005', 'Nuwan', 'nuwan@gmail.com', '0716622567', 'Polonnaruwa', '2004554586V');
+
+CREATE TABLE IF NOT EXISTS teacher(
+    teacher_Id VARCHAR(45) PRIMARY KEY,
+    teacher_Name VARCHAR(45),
+    nic VARCHAR(45) UNIQUE,
+    contact VARCHAR(20) UNIQUE,
+    address TEXT
+);
+
+CREATE TABLE IF NOT EXISTS subject(
+    subject_Id VARCHAR(45) PRIMARY KEY,
+    sub_Name VARCHAR(45),
+    credit DOUBLE,
+    teacher_Id VARCHAR(45),
+    CONSTRAINT FOREIGN KEY (teacher_Id) REFERENCES teacher (teacher_Id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS course(
+    course_Id VARCHAR(45) PRIMARY KEY,
+    course_Name VARCHAR(45),
+    cost DOUBLE,
+    duration VARCHAR(45),
+    subject_Id VARCHAR(45),
+    CONSTRAINT FOREIGN KEY (subject_Id) REFERENCES subject (subject_Id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS intake(
+    intake_Id VARCHAR(45) PRIMARY KEY,
+    start_Date DATE,
+    intake_col VARCHAR(45),
+    description VARCHAR(45),
+    course_Id VARCHAR(45),
+    CONSTRAINT FOREIGN KEY (course_Id) REFERENCES course (course_Id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS registration(
+    registration_Id VARCHAR(45) PRIMARY KEY,
+    reg_Date DATE,
+    student_Id VARCHAR(45),
+    intake_Id VARCHAR(45),
+    CONSTRAINT FOREIGN KEY (student_Id) REFERENCES student (student_Id) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT FOREIGN KEY (intake_Id) REFERENCES intake (intake_Id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS payment(
+    payment_Id VARCHAR(45) PRIMARY KEY,
+    date DATE,
+    cost DOUBLE,
+    registration_Id VARCHAR(45),
+    CONSTRAINT FOREIGN KEY (registration_Id) REFERENCES registration (registration_Id) ON DELETE CASCADE ON UPDATE CASCADE
+);
