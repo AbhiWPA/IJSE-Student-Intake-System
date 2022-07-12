@@ -36,6 +36,7 @@ public class ManageStudentFormController implements Initializable{
     public JFXButton btnUpdate;
     public JFXButton btnDelete;
     public JFXButton btnList;
+    public JFXButton btnBack;
 
     public void addBtnOnAction(ActionEvent actionEvent) {
         Student student = new Student(txtId.getText(), txtName.getText(), txtMail.getText(),txtContact.getText(), txtAddress.getText(),txtNic.getText());
@@ -130,5 +131,16 @@ public class ManageStudentFormController implements Initializable{
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    public void backBtnOnAction(ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage) btnBack.getScene().getWindow();
+        stage.close();
+
+        Parent parent = FXMLLoader.laad(getClass().getResource("../view/DashBoardForm.fxml"));
+        Stage stage2 = new Stage();
+        stage2.setScene(new Scene(parent));
+        stage2.setResizable(false);
+        stage2.show();
     }
 }
