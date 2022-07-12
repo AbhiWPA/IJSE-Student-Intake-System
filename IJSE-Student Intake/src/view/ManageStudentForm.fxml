@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane fx:id="context" prefHeight="549.0" prefWidth="598.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ManageStudentFormController">
+   <children>
+      <ImageView fitHeight="549.0" fitWidth="705.0" pickOnBounds="true" smooth="false">
+         <image>
+            <Image url="@assets/b2.jpg" />
+         </image>
+      </ImageView>
+      <Text fill="#d72828" layoutX="234.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage Student Details">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Text>
+      <Separator layoutX="9.0" layoutY="55.0" prefHeight="10.0" prefWidth="680.0" />
+      <JFXComboBox fx:id="cmbStudentID" focusColor="#161717" layoutX="178.0" layoutY="102.0" prefHeight="25.0" prefWidth="182.0" />
+      <Label layoutX="25.0" layoutY="102.0" text="Select Student ID :">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="25.0" layoutY="188.0" text="Student ID :">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtId" focusColor="#252628" labelFloat="true" layoutX="178.0" layoutY="196.0" prefHeight="25.0" prefWidth="279.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="25.0" layoutY="240.0" text="Student Name :">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtName" focusColor="#252628" labelFloat="true" layoutX="178.0" layoutY="248.0" prefHeight="25.0" prefWidth="279.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="25.0" layoutY="298.0" text="Student Email :">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtMail" focusColor="#252628" labelFloat="true" layoutX="178.0" layoutY="303.0" prefHeight="25.0" prefWidth="279.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="25.0" layoutY="355.0" text="Student Contact :">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtContact" focusColor="#252628" labelFloat="true" layoutX="178.0" layoutY="352.0" prefHeight="25.0" prefWidth="279.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="25.0" layoutY="403.0" text="Student Address :">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtAddress" focusColor="#252628" labelFloat="true" layoutX="178.0" layoutY="400.0" prefHeight="25.0" prefWidth="279.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="25.0" layoutY="467.0" text="Student NIC :">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtNic" focusColor="#252628" labelFloat="true" layoutX="178.0" layoutY="464.0" prefHeight="25.0" prefWidth="279.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="btnAdd" layoutX="533.0" layoutY="340.0" onAction="#addBtnOnAction" prefHeight="25.0" prefWidth="156.0" style="-fx-background-color: #0518a1;" text="Add New Student" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnUpdate" layoutX="533.0" layoutY="385.0" onAction="#updateBtnOnAction" prefHeight="25.0" prefWidth="156.0" style="-fx-background-color: #55a722;" text="Update Student" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnDelete" layoutX="533.0" layoutY="431.0" onAction="#deleteBtnOnAction" prefHeight="25.0" prefWidth="156.0" style="-fx-background-color: #da2727;" text="Delete Student" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnList" layoutX="533.0" layoutY="288.0" onAction="#listBtnOnAction" prefHeight="25.0" prefWidth="156.0" style="-fx-background-color: #0518a1;" text="Student List" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
