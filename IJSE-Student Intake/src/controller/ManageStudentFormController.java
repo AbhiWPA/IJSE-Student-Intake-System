@@ -137,7 +137,7 @@ public class ManageStudentFormController implements Initializable{
         Stage stage = (Stage) btnBack.getScene().getWindow();
         stage.close();
 
-        Parent parent = FXMLLoader.laad(getClass().getResource("../view/DashBoardForm.fxml"));
+        Parent parent = FXMLLoader.load(getClass().getResource("../view/DashBoardForm.fxml"));
         Stage stage2 = new Stage();
         stage2.setScene(new Scene(parent));
         stage2.setResizable(false);
