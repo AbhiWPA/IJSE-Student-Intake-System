@@ -7,12 +7,17 @@ import controller.CrudController.StudentCrudController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import model.Student;
 import util.CrudUtil;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -71,7 +76,12 @@ public class ManageStudentFormController implements Initializable{
         }
     }
 
-    public void listBtnOnAction(ActionEvent actionEvent) {
+    public void listBtnOnAction(ActionEvent actionEvent) throws IOException {
+        Parent parent = FXMLLoader.load(getClass().getResource("../view/StudentListForm.fxml"));
+        Stage stage2 = new Stage();
+        stage2.setScene(new Scene(parent));
+        stage2.setResizable(false);
+        stage2.show();
     }
 
     @Override
